@@ -43,4 +43,12 @@ server {
 
   (*Refer deploy.sh*)
 
+## Task 5: Set Up a Cron Job to Run the Python Script    
 
+- Open the cron job editor:       
+  
+  `crontab -e`    
+
+- Add the following script:    
+
+   `* * * * * /home/saimmoulvi/commitchecker/commitchecker.py >> /home/saimmoulvi/commitchecker/commitchecker_cronjob.log 2>&1`
