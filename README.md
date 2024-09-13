@@ -52,3 +52,18 @@ server {
 - Add the following script:    
 
    `* * * * * /home/saimmoulvi/commitchecker/commitchecker.py >> /home/saimmoulvi/commitchecker/commitchecker_cronjob.log 2>&1`
+
+## Task 6: Test the Setup     
+ - Manually run the Python script to ensure everything works:
+   
+   `/usr/bin/python3 /home/saimmoulvi/commitchecker/commitchecker.py`
+    
+ - Make changes to the HTML project, commit them, and push them to GitHub:
+   
+   ```
+   echo "<p>New change</p>" >> index.html
+   git add index.html
+   git commit -m "Added a new paragraph"
+   git push origin master
+   ```
+ - Wait for the cron job to run (or manually run the Python script), and check if the new changes are reflected on your web server.
